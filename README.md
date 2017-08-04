@@ -1,6 +1,8 @@
 # apm-toy-app
 A simple app to trace.
 
+![full_trace](https://github.com/gabsn/apm-toy-app/blob/img/full_trace.png)
+
 ## Prerequisites
 1. Install `docker` and `docker-compose` (you can try `sudo pip install docker-compose`)
 2. (Optional) Install `go` and its [dependency management tool](https://github.com/golang/dep)
