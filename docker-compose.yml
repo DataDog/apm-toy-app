@@ -11,18 +11,21 @@ services:
     links:
       - redis
       - postgres
+      - datadog
+
   redis:
     image: redis:4-alpine
+
   postgres:
     image: postgres:9.6-alpine
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
   datadog:
     build: datadog
     links:
      - redis
      - postgres
-     - app
     environment:
      - DD_APM_ENABLED=true
      - API_KEY=62e6170081cd3db36d3792d61945a6fd
