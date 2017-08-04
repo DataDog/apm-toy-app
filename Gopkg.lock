@@ -3,9 +3,15 @@
 
 [[projects]]
   name = "github.com/DataDog/dd-trace-go"
-  packages = ["tracer","tracer/contrib/gorilla/muxtrace","tracer/ext"]
+  packages = ["tracer","tracer/contrib/go-redis","tracer/contrib/gorilla/muxtrace","tracer/contrib/sqltraced","tracer/contrib/sqltraced/parsedsn","tracer/contrib/sqltraced/parsedsn/mysql","tracer/contrib/sqltraced/parsedsn/pq","tracer/contrib/sqltraced/sqlutils","tracer/ext"]
   revision = "bcbd859f5981ea37ecf4c9c795b2a04e9df4bc47"
   version = "v0.5.0"
+
+[[projects]]
+  name = "github.com/cihub/seelog"
+  packages = ["."]
+  revision = "d2c6e5aa9fbfdd1c624e140287063c7730654115"
+  version = "v2.6"
 
 [[projects]]
   name = "github.com/go-redis/redis"
@@ -46,6 +52,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "29a629c9728e06149f1c546e0417f29f9929351df75d4d651bcbe1f646e2992c"
+  inputs-digest = "f76dc0ddc9793696bc81e65b52c51ced262df9b9a70c6afb7a282deeb4d27af6"
   solver-name = "gps-cdcl"
   solver-version = 1
