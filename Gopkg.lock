@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/DataDog/dd-trace-go"
+  packages = ["tracer","tracer/contrib/gorilla/muxtrace","tracer/ext"]
+  revision = "bcbd859f5981ea37ecf4c9c795b2a04e9df4bc47"
+  version = "v0.5.0"
+
+[[projects]]
   name = "github.com/go-redis/redis"
   packages = [".","internal","internal/consistenthash","internal/hashtag","internal/pool","internal/proto"]
   revision = "a8ee44122a3b1763b94fed7d665be56fa0a71080"
@@ -25,9 +31,21 @@
   packages = [".","oid"]
   revision = "dd1fe2071026ce53f36a39112e645b4d4f5793a4"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/ugorji/go"
+  packages = ["codec"]
+  revision = "5efa3251c7f7d05e5d9704a69a984ec9f1386a40"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["windows"]
+  revision = "d8f5ea21b9295e315e612b4bcf4bedea93454d4d"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "4bac582e0ce1910ba34962a59e664194a3078aeab71307e5edd5fcd7415fe371"
+  inputs-digest = "29a629c9728e06149f1c546e0417f29f9929351df75d4d651bcbe1f646e2992c"
   solver-name = "gps-cdcl"
   solver-version = 1

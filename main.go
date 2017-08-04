@@ -6,15 +6,18 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/DataDog/dd-trace-go/tracer"
+	"github.com/DataDog/dd-trace-go/tracer/contrib/gorilla/muxtrace"
 	"github.com/go-redis/redis"
 	"github.com/gorilla/mux"
 	_ "github.com/lib/pq"
 )
 
 func main() {
-	router := newRouter()
-	router.HandleFunc("/", router.handler)
-	log.Fatal(http.ListenAndServe(":8080", router))
+	r := newRouter()
+	mt := muxtrace.NewMuxTracer("service_name", tracer.NewTracerTransport(tracer.NewTransport("datadog", "")))
+	mt.HandleFunc(r.Router, "/", r.handler)
+	log.Fatal(http.ListenAndServe(":8080", r))
 }
 
 type Router struct {
